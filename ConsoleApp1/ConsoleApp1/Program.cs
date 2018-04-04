@@ -23,8 +23,8 @@ namespace ConsoleApp1
                 Console.WriteLine("Select a mathematical operation:");
                 Console.WriteLine(" +");
                 Console.WriteLine(" -");
-                Console.WriteLine(" /");
                 Console.WriteLine(" *");
+                Console.WriteLine(" /");
                 Console.WriteLine("Input the operator:");
                 output = Convert.ToChar(Console.ReadLine());
 
@@ -53,7 +53,7 @@ namespace ConsoleApp1
                     Console.WriteLine("To exit press Escape, and any other key to continue");
                 }
                 
-                else if (output == '-')
+                else if (output == '*')
                 {
                     Console.WriteLine("Enter the first value:");
                     x = Convert.ToDouble(Console.ReadLine());
@@ -64,7 +64,7 @@ namespace ConsoleApp1
                     Console.WriteLine("To exit press Escape, and any other key to continue");
                 }
 
-                else if (output == '-')
+                else if (output == '/')
                 {
                     Console.WriteLine("Enter the first value:");
                     x = Convert.ToDouble(Console.ReadLine());
