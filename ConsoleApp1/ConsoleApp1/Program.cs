@@ -10,81 +10,81 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
-            double x;
-            double y;
-            double amount;
-            char output;
-
             do
             {
-                Console.Clear();
-                Console.WriteLine("Welcome to the calculator");
-                Console.WriteLine("Select a mathematical operation:");
-                Console.WriteLine(" +");
-                Console.WriteLine(" -");
-                Console.WriteLine(" *");
-                Console.WriteLine(" /");
-                Console.WriteLine("Input the operator:");
-                output = Convert.ToChar(Console.ReadLine());
+                Begin();
+            }
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
+        }
 
+        public static void Begin()
+        {
+            Console.Clear();
+            Console.WriteLine("Welcome to the calculator");
+            double x = FirstValue();
+            double y = SecondValue();
+            char output = Operator();
+            double amount;
 
-
-
-                if (output == '+')
-                {
-                    Console.WriteLine("Enter the first value:");
-                    x = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the second value:");
-                    y = Convert.ToDouble(Console.ReadLine());
+            switch (output)
+            {
+                case '+':
                     amount = x + y;
                     Console.WriteLine("Your result  =   " + amount);
                     Console.WriteLine("To exit press Escape, and any other key to continue");
-                }
-
-                else if (output == '-')
-                {
-                    Console.WriteLine("Enter the first value:");
-                    x = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the second value:");
-                    y = Convert.ToDouble(Console.ReadLine());
+                    break;
+                case '-':
                     amount = x - y;
                     Console.WriteLine("Your result  =   " + amount);
                     Console.WriteLine("To exit press Escape, and any other key to continue");
-                }
-                
-                else if (output == '*')
-                {
-                    Console.WriteLine("Enter the first value:");
-                    x = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the second value:");
-                    y = Convert.ToDouble(Console.ReadLine());
+                    break;
+                case '*':
                     amount = x * y;
                     Console.WriteLine("Your result  =   " + amount);
                     Console.WriteLine("To exit press Escape, and any other key to continue");
-                }
-
-                else if (output == '/')
-                {
-                    Console.WriteLine("Enter the first value:");
-                    x = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter the second value:");
-                    y = Convert.ToDouble(Console.ReadLine());
+                    break;
+                case '/':
                     amount = x / y;
                     Console.WriteLine("Your result  =   " + amount);
                     Console.WriteLine("To exit press Escape, and any other key to continue");
-                }
-
-                else
-                {
+                    break;
+                default:
                     Console.WriteLine("Wow! Your input is incorrect");
                     Console.WriteLine("To exit press Escape, and any other key to continue");
-                }
-
+                    break;
             }
-
-            while (Console.ReadKey().Key != ConsoleKey.Escape);
-
         }
+
+        public static double FirstValue()
+        {
+            double x;
+            Console.WriteLine("Enter the first value:");
+            x = Convert.ToDouble(Console.ReadLine());
+            return x;
+        }
+
+        public static double SecondValue()
+        {
+            double y;
+            Console.WriteLine("Enter the second value:");
+            y = Convert.ToDouble(Console.ReadLine());
+            return y;
+        }
+
+        public static char Operator()
+        {
+            char output;
+            Console.WriteLine("Select a mathematical operation:");
+            Console.WriteLine(" +");
+            Console.WriteLine(" -");
+            Console.WriteLine(" *");
+            Console.WriteLine(" /");
+            Console.WriteLine("Input the operator:");
+            output = Convert.ToChar(Console.ReadLine());
+            return output;
+        }
+
     }
+
 }
+
